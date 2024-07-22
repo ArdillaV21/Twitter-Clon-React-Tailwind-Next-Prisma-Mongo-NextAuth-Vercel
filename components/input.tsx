@@ -2,20 +2,20 @@ interface InputProps{
     placeholder?: string;
     value?: string;
     type?: string;
-    disable?: boolean;
+    disabled?: boolean;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const input: React.FC<InputProps> = ({
+const Input: React.FC<InputProps> = ({
     placeholder,
     value,
     type,
-    disable,
+    disabled,
     onChange
 }) => {
   return (
     <input
-        disabled={disable}
+        disabled={disabled}
         onChange={onChange}
         value={value}
         placeholder={placeholder}
@@ -41,4 +41,4 @@ const input: React.FC<InputProps> = ({
   )
 }
 
-export default input
+export default Input
