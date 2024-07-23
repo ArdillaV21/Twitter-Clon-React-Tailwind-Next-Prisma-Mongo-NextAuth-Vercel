@@ -30,21 +30,21 @@ const RegisterModal = () => {
 
     const onSubmit = useCallback(async () => {
         try{
-            setIsLoading(true)
+            setIsLoading(true);
 
-            await axios.post('/api/register', {
-                    email,
-                    password,
-                    username,
-                    name
-                })
+            await axios.post('/api/register',{
+                email,
+                password,
+                username,
+                name,
+            });
 
-                toast.success('Account created.')
+            toast.success('Account created.')
 
-                signIn('credentials', {
-                    email,
-                    password
-                })
+            signIn('credentials', {
+                email,
+                password
+            })
 
             registerModal.onClose()
         }catch(error){
@@ -77,6 +77,7 @@ const RegisterModal = () => {
             />
             <Input
                 placeholder="Password"
+                type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 disabled={isLoading}
