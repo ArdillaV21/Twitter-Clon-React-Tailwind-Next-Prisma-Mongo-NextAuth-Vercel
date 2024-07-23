@@ -1,5 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
-const fetcher = (url: string) => axios.get(url).then((res) => res.data)
+const fetcher = async (url: string) => {
+  const response = await axios.get(url);
+  return response.data;
+};
 
-export default fetcher
+export default fetcher;
